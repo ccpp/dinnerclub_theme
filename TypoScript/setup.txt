@@ -1,0 +1,43 @@
+plugin.tx_dinnerclub {
+    view {
+        templateRootPaths.30 = fileadmin/themes/html5blank-stable/
+    }
+}
+
+page {
+  config.absRefPrefix = /dinnerclub/
+  10 {
+    file = fileadmin/themes/html5blank-stable/Templates/Page/template.html
+
+    layoutRootPaths {
+      10 = fileadmin/themes/html5blank-stable/Layouts/Page/
+    }
+    
+    variables {
+    }
+  }
+
+  includeCSS >
+  includeCSS {
+    bootstrap = fileadmin/themes/html5blank-stable/css/bootstrap.min.css
+    normalize = fileadmin/themes/html5blank-stable/css/normalize.css
+    style = fileadmin/themes/html5blank-stable/css/style.css
+  }
+  includeJS >
+  includeJS {
+    jquery = fileadmin/themes/html5blank-stable/js/lib/jquery-1.12.4.min.js
+    conditionizr = fileadmin/themes/html5blank-stable/js/lib/conditionizr-4.3.0.min.js
+    modernizr = fileadmin/themes/html5blank-stable/js/lib/modernizr-2.7.1.min.js
+    scripts = fileadmin/themes/html5blank-stable/js/scripts.js
+    parallax = fileadmin/themes/html5blank-stable/js/parallax.min.js
+  }
+  jsInline.10 = TEXT
+  jsInline.10.value (
+        // conditionizr.com
+        // configure environment tests
+        conditionizr.config({
+            assets: '/dinnerclub/fileadmin/themes/html5blank-stable',
+            tests: {}
+        });
+  )
+}
