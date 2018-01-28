@@ -14,6 +14,9 @@ page {
     }
     
     variables {
+      menu >
+      leftContent >
+      footerContent >
       templatePublicURL = /dinnerclub/ffileadmin/themes/html5blank-stable/
     }
   }
@@ -27,6 +30,7 @@ page {
   includeJS >
   includeJS {
     jquery = fileadmin/themes/html5blank-stable/js/lib/jquery-1.12.4.min.js
+    bootstrap = fileadmin/themes/html5blank-stable/js/lib/bootstrap-3.3.7.min.js
     conditionizr = fileadmin/themes/html5blank-stable/js/lib/conditionizr-4.3.0.min.js
     modernizr = fileadmin/themes/html5blank-stable/js/lib/modernizr-2.7.1.min.js
     scripts = fileadmin/themes/html5blank-stable/js/scripts.js
