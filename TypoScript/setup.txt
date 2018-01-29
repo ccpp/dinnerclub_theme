@@ -6,6 +6,9 @@ plugin.tx_dinnerclub {
 
 page {
   config.absRefPrefix = /dinnerclub/
+
+  shortcutIcon = fileadmin/themes/html5blank-stable/img/logo-white.svg
+
   10 {
     file = fileadmin/themes/html5blank-stable/Templates/Page/template.html
 
@@ -17,9 +20,18 @@ page {
       menu >
       leftContent >
       footerContent >
-      templatePublicURL = /dinnerclub/ffileadmin/themes/html5blank-stable/
+
+      templatePublicURL = TEXT
+      templatePublicURL.value = fileadmin/themes/html5blank-stable/
     }
   }
+
+  cssInline.10.renderObj.wrap (
+    body {
+      background: url(|) no-repeat;
+      background-size: 100%;
+    }
+  )
 
   includeCSS >
   includeCSS {
