@@ -24,6 +24,7 @@ page {
   includeCSS >
   includeCSS {
     bootstrap = fileadmin/themes/html5blank-stable/css/bootstrap.min.css
+    fontawesome = fileadmin/themes/html5blank-stable/css/font-awesome-4.7.0.min.css
     normalize = fileadmin/themes/html5blank-stable/css/normalize.css
     style = fileadmin/themes/html5blank-stable/css/style.css
   }
