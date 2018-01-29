@@ -7,6 +7,25 @@ plugin.tx_dinnerclub {
 page {
   config.absRefPrefix = /dinnerclub/
 
+  config.additionalHeaders (
+    X-Content-Type-Options: nosniff |
+    X-Frame-Options: SAMEORIGIN |
+    X-XSS-Protection: 1; mode=block
+  )
+
+  meta {
+    viewport = width=device-width, initial-scale=1.0
+
+    X-UA-Compatible = IE=edge,chrome=1
+    X-UA-Compatible.httpEquivalent = 1
+
+    Referrer-Policy = no-referrer, strict-origin-when-cross-origin
+    Referrer-Policy.httpEquivalent = 1
+
+    Content-Security-Policy = default-src 'self' 'unsafe-inline'
+    Content-Security-Policy.httpEquivalent = 1
+  }
+
   shortcutIcon = fileadmin/themes/html5blank-stable/img/logo-white.svg
 
   10 {
