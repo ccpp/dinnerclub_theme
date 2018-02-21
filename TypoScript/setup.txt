@@ -4,9 +4,16 @@ plugin.tx_dinnerclub {
     }
 }
 
-page {
-  config.absRefPrefix = /dinnerclub/
+plugin.tx_news {
+    view {
+        partialRootPaths {
+            60 = fileadmin/themes/html5blank-stable/Partials/News/
+        }
+    }
+}
 
+page {
+  config.absRefPrefix = {$absrefprefix}
   config.additionalHeaders (
     X-Content-Type-Options: nosniff |
     X-Frame-Options: SAMEORIGIN |
@@ -15,6 +22,28 @@ page {
 
   meta {
     viewport = width=device-width, initial-scale=1.0
+
+    #og:image.data = levelmedia:-1,slide
+
+    og:image.cObject = FILES
+    og:image.cObject {
+      references.data = levelmedia:-1,slide
+      renderObj = IMG_RESOURCE
+      renderObj.file {
+        import.data = file:current:publicUrl
+        # ?? treatIdAsReference = 1
+        # minimum size: 600x315, suggested: 1200x630
+        width = 600
+        height = 315
+      }
+    }
+
+    og:image2.cObject = IMG_RESOURCE
+    og:image2.cObject {
+      file.import.data = levelmedia:-1,slide
+    }
+
+    msapplication-TileImage = {$absrefprefix}fileadmin/themes/html5blank-stable/img/cropped-logo-white-270x270.png
 
     X-UA-Compatible = IE=edge,chrome=1
     X-UA-Compatible.httpEquivalent = 1
@@ -25,8 +54,18 @@ page {
     Content-Security-Policy = default-src 'self'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; script-src 'self' 'unsafe-inline'; font-src 'self' fonts.gstatic.com
     Content-Security-Policy.httpEquivalent = 1
   }
-
+  
   shortcutIcon = fileadmin/themes/html5blank-stable/img/logo-white.svg
+
+  headerData {
+    1032 = TEXT
+    1032.value = <link rel="icon" href="{$absrefprefix}fileadmin/themes/html5blank-stable/img/cropped-logo-white-32x32.png" sizes="32x32" />
+    1192 = TEXT
+    1192.value = <link rel="icon" href="{$absrefprefix}fileadmin/themes/html5blank-stable/img/cropped-logo-white-192x192.png" sizes="192x192" />
+    1180 = TEXT
+    1180.value = <link rel="apple-touch-icon-precomposed" href="{$absrefprefix}fileadmin/themes/img/html5blank-stable/cropped-logo-white-180x180.png" />
+    )
+  }
 
   10 {
     file = fileadmin/themes/html5blank-stable/Templates/Page/template.html
@@ -58,6 +97,7 @@ page {
     fontawesome = fileadmin/themes/html5blank-stable/css/font-awesome-4.7.0.min.css
     normalize = fileadmin/themes/html5blank-stable/css/normalize.css
     style = fileadmin/themes/html5blank-stable/css/style.css
+    #fonts = https://fonts.googleapis.com/css?family=Asap:600,700|Noto+Sans:400,700
   }
   includeJS >
   includeJS {
@@ -73,8 +113,11 @@ page {
         // conditionizr.com
         // configure environment tests
         conditionizr.config({
-            assets: '/dinnerclub/fileadmin/themes/html5blank-stable',
+            assets: '{$absrefprefix}fileadmin/themes/html5blank-stable',
             tests: {}
         });
   )
 }
+
+
+
