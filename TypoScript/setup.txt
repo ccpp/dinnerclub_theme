@@ -1,19 +1,19 @@
 plugin.tx_dinnerclub {
     view {
-        templateRootPaths.30 = fileadmin/themes/html5blank-stable/
+        templateRootPaths.30 = EXT:dinnerclub_theme/Templates/
     }
 }
 
 plugin.tx_news {
     view {
         partialRootPaths {
-            60 = fileadmin/themes/html5blank-stable/Partials/News/
+            60 = EXT:dinnerclub_theme/Partials/News/
         }
     }
 }
 
 page {
-  config.absRefPrefix = {$absrefprefix}
+  config.absRefPrefix = {$absRefPrefix}
   config.additionalHeaders (
     X-Content-Type-Options: nosniff |
     X-Frame-Options: SAMEORIGIN |
@@ -43,7 +43,7 @@ page {
       file.import.data = levelmedia:-1,slide
     }
 
-    msapplication-TileImage = {$absrefprefix}fileadmin/themes/html5blank-stable/img/cropped-logo-white-270x270.png
+    msapplication-TileImage = {$absRefPrefix}typo3conf/ext/dinnerclub_theme/img/cropped-logo-white-270x270.png
 
     X-UA-Compatible = IE=edge,chrome=1
     X-UA-Compatible.httpEquivalent = 1
@@ -55,23 +55,23 @@ page {
     Content-Security-Policy.httpEquivalent = 1
   }
   
-  shortcutIcon = fileadmin/themes/html5blank-stable/img/logo-white.svg
+  shortcutIcon = EXT:dinnerclub_theme/img/logo-white.svg
 
   headerData {
     1032 = TEXT
-    1032.value = <link rel="icon" href="{$absrefprefix}fileadmin/themes/html5blank-stable/img/cropped-logo-white-32x32.png" sizes="32x32" />
+    1032.value = <link rel="icon" href="{$absRefPrefix}typo3conf/ext/dinnerclub_theme/img/cropped-logo-white-32x32.png" sizes="32x32" />
     1192 = TEXT
-    1192.value = <link rel="icon" href="{$absrefprefix}fileadmin/themes/html5blank-stable/img/cropped-logo-white-192x192.png" sizes="192x192" />
+    1192.value = <link rel="icon" href="{$absRefPrefix}typo3conf/ext/dinnerclub_theme/img/cropped-logo-white-192x192.png" sizes="192x192" />
     1180 = TEXT
-    1180.value = <link rel="apple-touch-icon-precomposed" href="{$absrefprefix}fileadmin/themes/img/html5blank-stable/cropped-logo-white-180x180.png" />
+    1180.value = <link rel="apple-touch-icon-precomposed" href="{$absRefPrefix}fileadmin/themes/img/html5blank-stable/cropped-logo-white-180x180.png" />
     )
   }
 
   10 {
-    file = fileadmin/themes/html5blank-stable/Templates/Page/template.html
+    file = EXT:dinnerclub_theme/Templates/Page/template.html
 
     layoutRootPaths {
-      10 = fileadmin/themes/html5blank-stable/Layouts/Page/
+      10 = EXT:dinnerclub_theme/Layouts/Page/
     }
     
     variables {
@@ -80,7 +80,7 @@ page {
       footerContent >
 
       templatePublicURL = TEXT
-      templatePublicURL.value = fileadmin/themes/html5blank-stable/
+      templatePublicURL.value = {$absRefPrefix}typo3conf/ext/dinnerclub_theme/
     }
   }
 
@@ -93,27 +93,27 @@ page {
 
   includeCSS >
   includeCSS {
-    bootstrap = fileadmin/themes/html5blank-stable/css/bootstrap.min.css
-    fontawesome = fileadmin/themes/html5blank-stable/css/font-awesome-4.7.0.min.css
-    normalize = fileadmin/themes/html5blank-stable/css/normalize.css
-    style = fileadmin/themes/html5blank-stable/css/style.css
+    bootstrap = EXT:dinnerclub_theme/css/bootstrap.min.css
+    fontawesome = EXT:dinnerclub_theme/css/font-awesome-4.7.0.min.css
+    normalize = EXT:dinnerclub_theme/css/normalize.css
+    style = EXT:dinnerclub_theme/css/style.css
     #fonts = https://fonts.googleapis.com/css?family=Asap:600,700|Noto+Sans:400,700
   }
   includeJS >
   includeJS {
-    jquery = fileadmin/themes/html5blank-stable/js/lib/jquery-1.12.4.min.js
-    bootstrap = fileadmin/themes/html5blank-stable/js/lib/bootstrap-3.3.7.min.js
-    conditionizr = fileadmin/themes/html5blank-stable/js/lib/conditionizr-4.3.0.min.js
-    modernizr = fileadmin/themes/html5blank-stable/js/lib/modernizr-2.7.1.min.js
-    scripts = fileadmin/themes/html5blank-stable/js/scripts.js
-    parallax = fileadmin/themes/html5blank-stable/js/parallax.min.js
+    jquery = EXT:dinnerclub_theme/js/lib/jquery-1.12.4.min.js
+    bootstrap = EXT:dinnerclub_theme/js/lib/bootstrap-3.3.7.min.js
+    conditionizr = EXT:dinnerclub_theme/js/lib/conditionizr-4.3.0.min.js
+    modernizr = EXT:dinnerclub_theme/js/lib/modernizr-2.7.1.min.js
+    scripts = EXT:dinnerclub_theme/js/scripts.js
+    parallax = EXT:dinnerclub_theme/js/parallax.min.js
   }
   jsInline.10 = TEXT
   jsInline.10.value (
         // conditionizr.com
         // configure environment tests
         conditionizr.config({
-            assets: '{$absrefprefix}fileadmin/themes/html5blank-stable',
+            assets: '{$absRefPrefix}typo3conf/ext/dinnerclub_theme/',
             tests: {}
         });
   )
