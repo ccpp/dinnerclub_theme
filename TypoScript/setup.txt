@@ -9,6 +9,9 @@ plugin.tx_news {
         partialRootPaths {
             60 = EXT:dinnerclub_theme/Partials/News/
         }
+        templateRootPaths {
+            60 = EXT:dinnerclub_theme/Templates/
+        }
     }
 }
 

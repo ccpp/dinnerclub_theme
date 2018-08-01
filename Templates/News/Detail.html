@@ -2,56 +2,24 @@
 <f:layout name="Detail.html" />
 
 <f:section name="content">
+  <f:switch expression="{settings.templateLayout}">
+    <f:case default="1">
           <div class="col-md-6 col-sm-6">
             <div class="event-box shadow">
               <div class="event-img-box">
                 <div class="event-img-overlay">
-                  <p class="img-overlay-text">19.01.2018</p>
+                  <p class="img-overlay-text">
+                    <f:translate key="day.{newsItem.datetime -> f:format.date(format: 'w')}" /> {newsItem.datetime -> f:format.date(format: 'j.')} <f:translate key="month.{newsItem.datetime -> f:format.date(format: 'm')}" /> {newsItem.datetime -> f:format.date(format: 'H:i')}</p>
+                  </p>
                 </div>
-                <img class="img-responsive event-img" src="http://dinnerclub.scre.at/wp-content/uploads/2017/11/mid-box.jpg" alt="">
+                <f:render partial="Detail/MediaContainer" arguments="{media: newsItem.media, settings:settings}" />
               </div>
               <div class="event-text-box">
-                <h3>Noch ein weiteres Event</h3>
-                <p>Der Verein Stila kocht für ein Kinderschulprojekt im Norden Indiens Durch mich gebiert das Netz die Kunst aus sich selbst heraus. Nicht schlicht reproduktiver Natur, repräsentiere ich vielmehr die kontinuierliche Evolution des Wortes, das sich Bahn brechen will aus der Gefangenschaft gestalterischer Experimente in die Freiheit des öffentlichen Raums. Vielleicht bald schon befreit aus den Fängen</p>
-                <button class="weiterlesen-button" onclick="window.location='http://dinnerclub.scre.at/noch-ein-weiteres-event/'" type="button" name="button">Weiterlesen</button>
+                <h3>{newsItem.title}</h3>
+                <p>{newsItem.bodytext -> f:format.html()}</p>
               </div>
             </div>
           </div>
-
-TEST
-<!--
-<div class="jumbotron">
-<f:switch expression="{settings.templateLayout}">
-<f:case value="55"><f:comment>Registration</f:comment>
-  <f:if condition="{newsItem -> dc:registrationAllowed()}">
-    <f:then>
-      <f:render partial="Registration/RegistrationForm" arguments="{newsItem: newsItem}" />
-    </f:then>
-    <f:else>
-      <f:render partial="EventDetail" arguments="{newsItem: newsItem, triedRegistration: 1}" />
-    </f:else>
-  </f:if>
-</f:case>
-<f:case value="56"><f:comment>Detailansicht ohne Registration</f:comment>
-  <f:render partial="EventDetail" arguments="{newsItem: newsItem}" />
-</f:case>
-<f:case value="57"><f:comment>Detail mit Anmeldungen</f:comment>
-  <f:render partial="EventDetail" arguments="{newsItem: newsItem, showRegistrations: 1}" />
-</f:case>
-<f:case value="58"><f:comment>Ab-/Ummeldung</f:comment>
-  <f:if condition="{newsItem -> dc:registrationAllowed()}">
-    <f:then>
-      <f:render partial="Registration/ModificationForm" arguments="{newsItem: newsItem}" />
-    </f:then>
-    <f:else>
-      <f:render partial="EventDetail" arguments="{newsItem: newsItem, triedRegistration: 1}" />
-    </f:else>
-  </f:if>
-</f:case>
-<f:case value=""><f:comment>Detail mit Anmeldungen</f:comment>
-  No news template chosen
-</f:case>
-</f:switch>
-</div>
--->
+    </f:case>
+  </f:switch>
 </f:section>
