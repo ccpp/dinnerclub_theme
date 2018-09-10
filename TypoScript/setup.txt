@@ -124,3 +124,9 @@ page {
 
 
 
+# imageorient: Parallax scroll
+tt_content.image.20.layout {
+    88 = TEXT
+    88.current = 1
+    88.wrap = <header data-parallax="scroll" data-image-src="{$absRefPrefix}|" style="height: 450px; background-position: center;"></header>
+}
