@@ -110,6 +110,7 @@ page {
     fontawesome = EXT:dinnerclub_theme/css/font-awesome-4.7.0.min.css
     normalize = EXT:dinnerclub_theme/css/normalize.css
     style = EXT:dinnerclub_theme/css/style.css
+    css_styled_content = EXT:dinnerclub_theme/css/css_styled_content.css
     #fonts = https://fonts.googleapis.com/css?family=Asap:600,700|Noto+Sans:400,700
   }
   includeJS >
