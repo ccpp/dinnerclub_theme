@@ -286,21 +286,16 @@ i.fa {
   margin: 20px;
 }
 
-.event-box:nth-child(odd){
-  margin-left: 0px;
-}
-
-.event-box:nth-child(even){
-  margin-right: 0px;
-}
-
 .event-img-box{
   position: relative;
+  width: 50%;
+  min-height: 300px;
+  float: right;
 }
 
 .event-img-overlay{
   position: absolute;
-  bottom: 0px;
+  top: 0px;
   left: 0px;
   right: 0px;
   background-color: rgba(0, 0, 0, 0.64);
