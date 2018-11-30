@@ -91,15 +91,14 @@ page {
       dinnerclubEmail.value = {$plugin.tx_dinnerclubtheme.settings.email}
       dinnerclubFacebook = TEXT
       dinnerclubFacebook.value = {$plugin.tx_dinnerclubtheme.settings.facebook}
+
+      pageMedia = TEXT
+      pageMedia.data = levelmedia:-1,slide
     }
   }
 
-  cssInline.10.renderObj.wrap (
-    body {
-      background: url(|) no-repeat;
-      background-size: 100%;
-    }
-  )
+  // Remove background image inserted in EXT:dinnerclub
+  cssInline.10 >
 
   includeCSS >
   includeCSS {
