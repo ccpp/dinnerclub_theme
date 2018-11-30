@@ -15,6 +15,14 @@ plugin.tx_news {
     }
 }
 
+plugin.tx_felogin_pi1 {
+  _LOCAL_LANG.de {
+    username = Name
+    password = Kennwort
+    login = Jetzt anmelden
+  }
+}
+
 page {
   config.absRefPrefix = {$absRefPrefix}
   config.additionalHeaders (
