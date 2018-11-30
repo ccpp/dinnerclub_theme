@@ -295,17 +295,20 @@ i.fa {
 
 .event-box{
   margin: 20px;
+  background: white;
 }
 
 .event-img-box{
-  /*position: relative;*/
-  /*width: 50%;*/
-  min-height: 300px;
-  /*float: right;*/
+  position: relative;
+}
+
+.event-img-box img{
+  width: 100%;
+  height: auto;
 }
 
 .event-img-overlay{
-  /*position: absolute;*/
+  position: absolute;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -331,6 +334,10 @@ i.fa {
     border-radius: 1px;
     font-weight: 300;
     padding: 10px 25px 10px 25px;
+}
+
+.weiterlesen-button:hover {
+    color: black;
 }
 
 .anmelden-button {
