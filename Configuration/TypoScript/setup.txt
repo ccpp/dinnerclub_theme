@@ -145,3 +145,18 @@ tt_content.image.20.layout {
     88.current = 1
     88.wrap = <header data-parallax="scroll" data-image-src="{$absRefPrefix}|" style="height: 450px; background-position: center;"></header>
 }
+
+# section_frame
+tt_content.stdWrap.innerWrap.cObject {
+    10 {
+        # Schmal
+    }
+    20 {
+        # Box mit Schatten
+        20.10.value := appendString( csc-default shadow)
+    }
+    21 {
+        # Schmal, mit Schatten
+        20.10.value := appendString( csc-frame-indent shadow)
+    }
+}

@@ -172,6 +172,7 @@ textarea.form-control {
 .shadow{
   border: 5px solid white;
   box-shadow: 1px 1px 20px -5px black;
+  background: white;
 }
 
 .logo-container{
@@ -295,7 +296,6 @@ i.fa {
 
 .event-box{
   margin: 20px;
-  background: white;
 }
 
 .event-img-box{
@@ -622,7 +622,6 @@ h1.referral {
     width: 200px;
     height: 200px;
     background-color: white;
-}
 }
 
 
