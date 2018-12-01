@@ -115,6 +115,7 @@ page {
     normalize = EXT:dinnerclub_theme/Resources/Public/css/normalize.css
     style = EXT:dinnerclub_theme/Resources/Public/css/style.css
     css_styled_content = EXT:dinnerclub_theme/Resources/Public/css/css_styled_content.css
+    felogin = EXT:dinnerclub_theme/Resources/Public/css/felogin.css
     #fonts = https://fonts.googleapis.com/css?family=Asap:600,700|Noto+Sans:400,700
   }
   includeJS >
