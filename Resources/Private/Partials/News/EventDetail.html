@@ -1,0 +1,19 @@
+<div class="event-box shadow"
+  xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers">
+  <div class="event-text-box">
+      <p class="img-overlay-text">
+        <f:translate key="day.{newsItem.datetime -> f:format.date(format: 'w')}" /> {newsItem.datetime -> f:format.date(format: 'j.')} <f:translate key="month.{newsItem.datetime -> f:format.date(format: 'm')}" /> {newsItem.datetime -> f:format.date(format: 'H:i')}</p>
+      </p>
+    <h3>{newsItem.title}</h3>
+    <p>{newsItem.bodytext -> f:format.html()}</p>
+  </div>
+  <div class="event-img-box row">
+    <f:for each="{newsItem.falMedia}" as="media">
+      <n:metaTag name="og:image" content="{f:uri.image(image: media, width: 270)}"/>
+      <div class="col-md-3">
+      <f:image image="{media}" width="270"/>
+      </div>
+    </f:for>
+  </div>
+</div>
