@@ -1,3 +1,9 @@
+.bg-dark {
+    /* Not in bootstrap 3.3 */
+    background-color: #333;
+    color: white;
+}
+
 .csc-default {
     width: 80%;
     margin-left: auto;

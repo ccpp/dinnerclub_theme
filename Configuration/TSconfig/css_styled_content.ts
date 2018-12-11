@@ -19,5 +19,8 @@ TCEFORM.tt_content {
             20 = Box mit Schatten
             21 = Schmal, mit Schatten
         }
+        addItems {
+            22 = Dunkler Hintergrund
+        }
     }
 }

@@ -159,4 +159,13 @@ tt_content.stdWrap.innerWrap.cObject {
         # Schmal, mit Schatten
         20.10.value := appendString( csc-frame-indent shadow)
     }
+
+    # Dunkler Hintergrund
+    22 =< tt_content.stdWrap.innerWrap.cObject.default
+    22 {
+        5 = TEXT
+        5.value = <div class="bg-dark">
+        50 = TEXT
+        50.value = </div>
+    }
 }
