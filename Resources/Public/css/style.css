@@ -85,6 +85,11 @@ header {
   height: 700px;
 }
 
+section {
+  position: relative;
+  z-index: 1;
+}
+
 footer{
   background-color: #333;
   color: white;
