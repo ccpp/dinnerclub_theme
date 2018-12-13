@@ -1,0 +1,72 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+  xmlns:dc="http://typo3.org/ns/CP/Dinnerclub/ViewHelpers">
+<f:layout name="Detail.html" />
+
+<f:section name="content">
+<f:switch expression="{settings.templateLayout}">
+<f:case value="55"><f:comment>Registration</f:comment>
+  <f:render partial="EventDetail" arguments="{newsItem: newsItem}" />
+  <ul class="nav nav-tabs">
+    <f:if condition="{newsItem -> dc:registrationAllowed()}">
+    <li class="active">
+      <a data-toggle="tab" href="#tab-registration">Anmelden</a>
+    </li>
+    <li>
+      <a data-toggle="tab" href="#tab-change">Um-/Abmelden</a>
+    </li>
+    </f:if>
+    <f:security.ifAuthenticated>
+    <li>
+      <a data-toggle="tab" href="#tab-registrations">Anmeldungen</a>
+    </li>
+    </f:security.ifAuthenticated>
+  </ul>
+
+  <div class="tab-content panel">
+  <f:if condition="{newsItem -> dc:registrationAllowed()}">
+    <f:then>
+      <div id="tab-registration" class="tab-pane fade in active event-box">
+      <f:render partial="Registration/RegistrationForm" arguments="{newsItem: newsItem}" />
+      </div>
+      <div id="tab-change" class="tab-pane fade event-box">
+      <f:render partial="Registration/ModificationForm" arguments="{newsItem: newsItem}" />
+      </div>
+    </f:then>
+  </f:if>
+  <f:security.ifAuthenticated>
+    <f:then>
+      <div id="tab-registrations" class="tab-pane fade event-box">
+        <f:render partial="EventRegistrations" arguments="{newsItem: newsItem}" />
+      </div>
+    </f:then>
+  </f:security.ifAuthenticated>
+  </div>
+</f:case>
+<f:case value="56"><f:comment>Detailansicht ohne Registration</f:comment>
+  <f:render partial="EventDetail" arguments="{newsItem: newsItem}" />
+</f:case>
+<f:case value="57"><f:comment>Detail mit Anmeldungen</f:comment>
+  <f:render partial="EventDetail" arguments="{newsItem: newsItem}" />
+  <f:security.ifAuthenticated>
+  <f:render partial="Registration/ModificationForm" arguments="{newsItem: newsItem}" />
+  </f:security.ifAuthenticated>
+</f:case>
+<f:case value="58"><f:comment>Ab-/Ummeldung</f:comment>
+  <f:if condition="{newsItem -> dc:registrationAllowed()}">
+    <f:then>
+      <f:render partial="Registration/ModificationForm" arguments="{newsItem: newsItem}" />
+    </f:then>
+    <f:else>
+      <f:render partial="EventDetail" arguments="{newsItem: newsItem, triedRegistration: 1}" />
+    </f:else>
+  </f:if>
+</f:case>
+<f:case value=""><f:comment>Detail mit Anmeldungen</f:comment>
+  No news template chosen
+</f:case>
+<f:case default="1">
+  <div>Template {settings.templateLayout} not implemented for detail page</div>
+</f:case>
+</f:switch>
+</f:section>
+</html>
