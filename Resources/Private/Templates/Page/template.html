@@ -131,29 +131,6 @@ img.emoji {
 	</f:comment>
 	{content -> f:format.raw()}
 
-
-
-  <div class="container-fluid full-width-map">
-    <div class="row">
-      <div class="col-md-12 noPadding">
-        <div id="map"></div>
-        <script>
-          function initMap() {
-            var uluru = {lat: -25.363, lng: 131.044};
-            var map = new google.maps.Map(document.getElementById('map'), {
-              zoom: 17,
-              center: {lat: 47.2662106, lng: 11.4161966}
-            });
-            var marker = new google.maps.Marker({
-              position: {lat: 47.2662106, lng: 11.4161966},
-              map: map
-            });
-          }
-        </script>
-      </div>
-    </div>
-  </div>
-
 </section>
 
 <footer>
