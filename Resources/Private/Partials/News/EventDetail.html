@@ -10,7 +10,12 @@
   </div>
   <div class="event-img-box row">
     <f:for each="{newsItem.falMedia}" as="media">
-      <n:metaTag name="og:image" content="{f:uri.image(image: media, width: 270)}"/>
+      <n:titleTag>{newsItem.title}</n:titleTag>
+      <n:metaTag property="og:image" content="{f:uri.image(image: media, width: 270)}" forceAbsoluteUrl="1"/>
+      <n:metaTag property="x:og:url" content=""/>
+      <n:metaTag property="og:type" content="website"/>
+      <n:metaTag property="og:title" content="{newsItem.title}"/>
+      <n:metaTag property="og:description" content="Dinnerclub-Abend am {newsItem.datetime -> f:format.date(format:'j. m Y')}"/>
       <div class="col-md-3">
       <f:image image="{media}" width="270"/>
       </div>
