@@ -36,8 +36,12 @@ page {
 
     #og:image.data = levelmedia:-1,slide
 
-    og:image.cObject = FILES
-    og:image.cObject {
+    og:image.cObject = TEXT
+    og:image.typolink {
+      returnLast = url
+      forceAbsoluteUrl = 1
+      parameter.stdWrap = IMG_RESOURCE
+      parameter.stdWrap {
       references.data = levelmedia:-1,slide
       renderObj = IMG_RESOURCE
       renderObj.file {
@@ -46,6 +50,7 @@ page {
         # minimum size: 600x315, suggested: 1200x630
         width = 600
         height = 315
+      }
       }
     }
 
