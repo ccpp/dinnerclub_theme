@@ -13,6 +13,10 @@ plugin.tx_news {
             60 = EXT:dinnerclub_theme/Resources/Private/Templates/
         }
     }
+    settings {
+        dinnerclubStreet = {$plugin.tx_dinnerclubtheme.settings.street}
+        dinnerclubCity = {$plugin.tx_dinnerclubtheme.settings.city}
+    }
 }
 
 plugin.tx_felogin_pi1 {

@@ -1,11 +1,12 @@
 <div class="event-box"
   xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers">
+  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+  itemscope="" itemtype="http://schema.org/SocialEvent">
   <div class="event-text-box">
-      <p class="img-overlay-text">
-        <f:translate key="day.{newsItem.datetime -> f:format.date(format: 'w')}" /> {newsItem.datetime -> f:format.date(format: 'j.')} <f:translate key="month.{newsItem.datetime -> f:format.date(format: 'm')}" /> {newsItem.datetime -> f:format.date(format: 'H:i')}</p>
-      </p>
-    <h3>{newsItem.title}</h3>
+      <time class="img-overlay-text" itemprop="startDate" datetime="{newsItem.datetime -> f:format.date(format: 'c')}">
+        <f:translate key="day.{newsItem.datetime -> f:format.date(format: 'w')}" /> {newsItem.datetime -> f:format.date(format: 'j.')} <f:translate key="month.{newsItem.datetime -> f:format.date(format: 'm')}" /> {newsItem.datetime -> f:format.date(format: 'H:i')}
+      </time>
+    <h3 itemprop="name">{newsItem.title}</h3>
     <p>{newsItem.bodytext -> f:format.html()}</p>
   </div>
   <div class="event-img-box row">
@@ -17,8 +18,13 @@
       <n:metaTag property="og:title" content="{newsItem.title}"/>
       <n:metaTag property="og:description" content="Dinnerclub-Abend am {newsItem.datetime -> f:format.date(format:'j. m Y')}"/>
       <div class="col-md-3">
-      <f:image image="{media}" width="270"/>
+      <f:image image="{media}" width="270" additionalAttributes="{itemprop: 'image'}"/>
       </div>
     </f:for>
+  </div>
+  <div itemprop="location" itemscope="" itemtype="http://schema.org/Place">
+    <meta itemprop="name" content="Schutzengelkirche"/>
+    <div itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress" itemref="dinnerclub-street dinnerclub-city">
+    </div>
   </div>
 </div>

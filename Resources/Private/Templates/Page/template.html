@@ -134,24 +134,33 @@ img.emoji {
 </section>
 
 <footer>
-  <div class="container">
+  <div class="container" itemscope="" itemtype="http://schema.org/NGO">
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
         <div class="row mrT-80 mrB-40">
           <div class="col-md-4">
-
-
-		  <div><img class="image " src="{f:uri.resource(extensionName: 'dinnerclub_theme', path: 'img/logo-white.svg')}" alt="" width="174" height="150" /></div>
+	    <a href="/" itemprop="url">
+             <img class="image " itemprop="logo" src="{f:uri.resource(extensionName: 'dinnerclub_theme', path: 'img/logo-white.svg')}" alt="" width="174" height="150" />
+            </a>
           </div>
           <div class="col-md-4">
             <div>
               <h3 class="rounded">Kontakt</h3>
               <div class="textwidget custom-html-widget">
-                <p>Dinnerclub<br>
-                {dinnerclubStreet}<br>
-                {dinnerclubCity}<br/><br/>
-                Tel.: {dinnerclubPhone}<br>
-                E-Mail: <a href="mailto:{dinnerclubEmail}">{dinnerclubEmail}</a><br>
+                <p itemprop="legalName">Verein zur Förderung des Integrationshauses der Diözese Innsbruck</p>
+                <!-- p itemprop="address"> ?? -->
+                <p>Vereinsregisternummer <span itemprop="vatID">457/98</span></p>
+
+                <p><span itemprop="name">Dinnerclub</span> Veranstaltungsort: (Nicht Postadresse)</p>
+                <p itemprop="location" itemscope="" itemtype="http://schema.org/PostalAddress">
+                <span id="dinnerclub-street" itemprop="streetAddress">{dinnerclubStreet}</span><br>
+                <span id="dinnerclub-city" itemprop="addressLocality">{dinnerclubCity}</span><br>
+                (Nur <span itemprop="hoursAvailable">Mittwoch und Freitag Abends</span>)
+                </p>
+                <p>
+                Tel.: <span itemprop="telephone">{dinnerclubPhone}</span><br>
+                E-Mail: <a href="mailto:{dinnerclubEmail}" itemprop="email">{dinnerclubEmail}</a>
+                </p>
               </div>
             </div>
           </div>
