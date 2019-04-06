@@ -9,18 +9,20 @@
             <div class="event-box shadow">
             <div class="row">
               <f:if condition="{newsItem.falMedia}">
-              <div class="col-lg-6">
+              <f:then>
+              <div class="col-sm-6">
               <div class="event-img-box">
                 <div class="event-img-overlay">
                   <p class="img-overlay-text">
                     <f:translate key="day.{newsItem.datetime -> f:format.date(format: 'w')}" /> {newsItem.datetime -> f:format.date(format: 'j.')} <f:translate key="month.{newsItem.datetime -> f:format.date(format: 'm')}" /> {newsItem.datetime -> f:format.date(format: 'H:i')}</p>
                   </p>
                 </div>
-                <f:image image="{newsItem.falMedia.0.originalResource}" width="270"/>
+<n:link newsItem="{newsItem}">
+                <f:image image="{newsItem.falMedia.0.originalResource}" width="500"/>
+</n:link>
               </div>
               </div>
-              </f:if>
-              <div class="col-lg-6">
+              <div class="col-sm-6">
               <div class="event-text-box">
                 <h3>{newsItem.title}</h3>
                 <p class="lead">{newsItem.teaser -> f:format.nl2br()}</p>
@@ -33,6 +35,25 @@
                 </f:if>
               </div>
               </div>
+              </f:then>
+
+              <f:else>
+              <div class="col-xs-12">
+                    <f:translate key="day.{newsItem.datetime -> f:format.date(format: 'w')}" /> {newsItem.datetime -> f:format.date(format: 'j.')} <f:translate key="month.{newsItem.datetime -> f:format.date(format: 'm')}" /> {newsItem.datetime -> f:format.date(format: 'H:i')}</p>
+              <div class="event-text-box">
+                <h3>{newsItem.title}</h3>
+                <p class="lead">{newsItem.teaser -> f:format.nl2br()}</p>
+                <f:if condition="{newsItem.registrationPossible}">
+                <p>
+                <n:link newsItem="{newsItem}" class="weiterlesen-button">Weiterlesen / Anmelden</n:link>
+                </p>
+                <p>{dc:countRegistrations(newsItem: newsItem)} Anmeldungen</p>
+                <p><dc:deadlineMessage event="{newsItem}" /></p>
+                </f:if>
+              </div>
+              </div>
+              </f:else>
+              </f:if>
             </div>
             </div>
     </f:case>
