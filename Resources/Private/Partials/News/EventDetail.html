@@ -6,18 +6,23 @@
       <time class="img-overlay-text" itemprop="startDate" datetime="{newsItem.datetime -> f:format.date(format: 'c')}">
         <f:translate key="day.{newsItem.datetime -> f:format.date(format: 'w')}" /> {newsItem.datetime -> f:format.date(format: 'j.')} <f:translate key="month.{newsItem.datetime -> f:format.date(format: 'm')}" /> {newsItem.datetime -> f:format.date(format: 'H:i')}
       </time>
+      <time class="img-overlay-text" itemprop="endDate" datetime="{newsItem.datetime -> f:format.date(format: 'c')}">
+      </time>
     <h3 itemprop="name">{newsItem.title}</h3>
     <p>{newsItem.bodytext -> f:format.html()}</p>
+    <div itemprop="performer">Dinnerclub Innsbruck</div>
+    <meta itemprop="description" content="Dinnerclub-Abend am {newsItem.datetime -> f:format.date(format:'j. m Y')}"/>
+    <n:metaTag property="og:description" content="Dinnerclub-Abend am {newsItem.datetime -> f:format.date(format:'j. m Y')}"/>
   </div>
   <div class="event-img-box row">
     <f:for each="{newsItem.falMedia}" as="media">
-      <n:titleTag>{newsItem.title}</n:titleTag>
+      <n:titleTag>{newsItem.title -> f:format.raw()}</n:titleTag>
       <n:metaTag property="og:image" content="{f:uri.image(image: media, width: 270)}" forceAbsoluteUrl="1"/>
       <n:metaTag property="x:og:url" content=""/>
       <n:metaTag property="og:type" content="website"/>
       <n:metaTag property="og:title" content="{newsItem.title}"/>
       <n:metaTag property="og:description" content="Dinnerclub-Abend am {newsItem.datetime -> f:format.date(format:'j. m Y')}"/>
-      <div class="col-md-3">
+      <div class="col-xs-3">
       <f:image image="{media}" width="270" additionalAttributes="{itemprop: 'image'}"/>
       </div>
     </f:for>
