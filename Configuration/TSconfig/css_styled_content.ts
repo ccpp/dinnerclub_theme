@@ -10,8 +10,12 @@ TCEFORM.tt_content {
 
     layout {
         removeItems = 1,2,3
+        addItems {
+            99 = Box mit Schatten
+        }
     }
 
+    # TYPO3 pre8
     section_frame {
         removeItems = 5,6,11,12
         altLabels {
