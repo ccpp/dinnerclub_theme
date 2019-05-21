@@ -75,7 +75,7 @@ page {
     Content-Security-Policy.httpEquivalent = 1
   }
   
-  shortcutIcon = EXT:dinnerclub_theme/Resources/Public/img/logo-white.svg
+  shortcutIcon = EXT:dinnerclub_theme/Resources/Public/img/logo-nocircle.svg
 
   headerData {
     1032 = TEXT
@@ -83,7 +83,7 @@ page {
     1192 = TEXT
     1192.value = <link rel="icon" href="{$absRefPrefix}typo3conf/ext/dinnerclub_theme/Resources/Public/img/cropped-logo-white-192x192.png" sizes="192x192" />
     1180 = TEXT
-    1180.value = <link rel="apple-touch-icon-precomposed" href="{$absRefPrefix}fileadmin/themes/img/html5blank-stable/cropped-logo-white-180x180.png" />
+    1180.value = <link rel="apple-touch-icon-precomposed" href="{$absRefPrefix}typo3conf/ext/dinnerclub_theme/Resources/Public/img/cropped-logo-white-180x180.png" />
   }
 
   10 {
