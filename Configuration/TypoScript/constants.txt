@@ -1,9 +1,27 @@
-absRefPrefix = /
+﻿absRefPrefix = /
 
 plugin.tx_dinnerclubtheme.settings {
+	# cat=plugin.tx_dinnerclubtheme/contact/a; type=string; label=Phone: Telephone contact
 	phone = +43 (0) 512 ...
+
+	# cat=plugin.tx_dinnerclubtheme/contact/b; type=string; label=Street: Contact address, street part
 	street = Gumppstraße 67
+
+	# cat=plugin.tx_dinnerclubtheme/contact/c; type=string; label=City: Contact address, city part
 	city = 6020 Innsbruck
+
+	# cat=plugin.tx_dinnerclubtheme/contact/d; type=string; label=Email: Contact email
 	email = dinnerclub@caritas-integrationshaus.at
+
+	# cat=plugin.tx_dinnerclubtheme/contact/e; type=string; label=Facebook: Facebook page URL
 	facebook =
+
+	# cat=plugin.tx_dinnerclubtheme/file/a; type=file; label=Shortcut icon: Favicon
+	shortcutIcon = EXT:dinnerclub_theme/Resources/Public/img/logo-nocircle.svg
+
+	# cat=plugin.tx_dinnerclubtheme/file/a; type=file; label=Wide icon: 1.9:1 scaled, for OpenGraph
+	wideIcon = typo3conf/ext/dinnerclub_theme/Resources/Public/img/logo-noslogan-wide.png
+
+	# cat=plugin.tx_dinnerclubtheme/file/a; type=file; label=Default icon image: Used for OG, tiles, apple touch
+	thumbnail = typo3conf/ext/dinnerclub_theme/Resources/Public/img/logo-notext.png
 }

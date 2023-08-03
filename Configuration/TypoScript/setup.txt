@@ -40,30 +40,44 @@ page {
 
     #og:image.data = levelmedia:-1,slide
 
-    og:image.cObject = TEXT
+    # TODO! combination with <n:metaTag> ?
+    og:image = TEXT
+    og:image.attribute = property
     og:image.typolink {
+      parameter = {$plugin.tx_dinnerclubtheme.settings.wideIcon}
       returnLast = url
       forceAbsoluteUrl = 1
-      parameter.stdWrap = IMG_RESOURCE
-      parameter.stdWrap {
-      references.data = levelmedia:-1,slide
-      renderObj = IMG_RESOURCE
-      renderObj.file {
-        import.data = file:current:publicUrl
-        # ?? treatIdAsReference = 1
-        # minimum size: 600x315, suggested: 1200x630
-        width = 600
-        height = 315
-      }
-      }
     }
+
+#    og:image.cObject = TEXT
+#    og:image.typolink {
+#      returnLast = url
+#      forceAbsoluteUrl = 1
+#      parameter.stdWrap = IMG_RESOURCE
+#      parameter.stdWrap {
+#      references.data = levelmedia:-1,slide
+#      renderObj = IMG_RESOURCE
+#      renderObj.file {
+#        import.data = file:current:publicUrl
+#        # ?? treatIdAsReference = 1
+#        # minimum size: 600x315, suggested: 1200x630
+#        width = 600
+#        height = 315
+#      }
+#      }
+#    }
 
     og:image2.cObject = IMG_RESOURCE
     og:image2.cObject {
       file.import.data = levelmedia:-1,slide
     }
 
-    msapplication-TileImage = {$absRefPrefix}typo3conf/ext/dinnerclub_theme/Resources/Public/img/cropped-logo-white-270x270.png
+    msapplication-TileImage = TEXT
+    msapplication-TileImage.typolink {
+      parameter = {$plugin.tx_dinnerclubtheme.settings.thumbnail}
+      returnLast = url
+      forceAbsoluteUrl = 1
+    }
 
     X-UA-Compatible = IE=edge,chrome=1
     X-UA-Compatible.httpEquivalent = 1
@@ -75,15 +89,44 @@ page {
     Content-Security-Policy.httpEquivalent = 1
   }
   
-  shortcutIcon = EXT:dinnerclub_theme/Resources/Public/img/logo-nocircle.svg
+  shortcutIcon = {$plugin.tx_dinnerclubtheme.settings.shortcutIcon}
 
   headerData {
+
     1032 = TEXT
-    1032.value = <link rel="icon" href="{$absRefPrefix}typo3conf/ext/dinnerclub_theme/Resources/Public/img/cropped-logo-white-32x32.png" sizes="32x32" />
+    1032.wrap = <link rel="icon" href="|" sizes="32x32" />
+    1032.typolink {
+      parameter.stdWrap.cObject = IMG_RESOURCE
+      parameter.stdWrap.cObject {
+        file = {$plugin.tx_dinnerclubtheme.settings.shortcutIcon}
+        file.width = 32
+        file.height = 32
+      }
+      returnLast = url
+      forceAbsoluteUrl = 1
+    }
+
     1192 = TEXT
-    1192.value = <link rel="icon" href="{$absRefPrefix}typo3conf/ext/dinnerclub_theme/Resources/Public/img/cropped-logo-white-192x192.png" sizes="192x192" />
+    1192.wrap = <link rel="icon" href="|" sizes="192x192" />
+    1192.typolink {
+      parameter.stdWrap.cObject = IMG_RESOURCE
+      parameter.stdWrap.cObject {
+        file = {$plugin.tx_dinnerclubtheme.settings.thumbnail}
+        file.width = 192
+        file.height = 192
+      }
+      returnLast = url
+      forceAbsoluteUrl = 1
+    }
+
+
     1180 = TEXT
-    1180.value = <link rel="apple-touch-icon-precomposed" href="{$absRefPrefix}typo3conf/ext/dinnerclub_theme/Resources/Public/img/cropped-logo-white-180x180.png" />
+    1180.wrap = <link rel="apple-touch-icon-precomposed" href="|" />
+    1180.typolink {
+      parameter = {$plugin.tx_dinnerclubtheme.settings.thumbnail}
+      returnLast = url
+      forceAbsoluteUrl = 1
+    }
   }
 
   10 {
@@ -155,8 +198,8 @@ tt_content.image.20.layout {
     88.wrap = <div data-parallax="scroll" data-image-src="{$absRefPrefix}|" style="height: 450px; background-position: center;""></div>
 }
 
+# section_frame
 tt_content.stdWrap.innerWrap.cObject {
-    # section_frame (Only TYPO3 pre8)
     10 {
         # Schmal
     }
@@ -176,17 +219,5 @@ tt_content.stdWrap.innerWrap.cObject {
         5.value = <div class="bg-dark">
         50 = TEXT
         50.value = </div>
-    }
-
-    # Layout
-    default {
-        20 {
-            40 = CASE
-            40 {
-                key.field = layout
-                99 = TEXT
-                99.value = shadow
-            }
-        }
     }
 }

@@ -1,4 +1,4 @@
-/*
+﻿/*
 	Theme Name: Dinnerclub
 	Theme URI: http://dinner-club.tirol
 	Version: 0.0.3
@@ -174,7 +174,7 @@ textarea.form-control {
   color: rgb(245, 157, 36);
 }
 
-.shadow{
+.shadow, .layout-99{
   padding-left: 20px;
   padding-right: 20px;
   border: 5px solid white;

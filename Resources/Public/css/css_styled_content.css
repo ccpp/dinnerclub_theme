@@ -15,6 +15,16 @@
     margin-right: auto;
 }
 
+.csc-frame-indent-shadow {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+
+    border: 5px solid white;
+    box-shadow: 1px 1px 20px -5px black;
+    background-color: white;
+}
+
 @media all and (max-width: 1000px) {
 .csc-default,
 .csc-frame-indent {
