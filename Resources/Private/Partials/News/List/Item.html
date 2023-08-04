@@ -18,7 +18,9 @@
                   </p>
                 </div>
 <n:link newsItem="{newsItem}">
+                <f:if condition="{newsItem.falMedia.0.originalResource}">
                 <f:image image="{newsItem.falMedia.0.originalResource}" width="500"/>
+                </f:if>
 </n:link>
               </div>
               </div>

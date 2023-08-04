@@ -141,6 +141,8 @@ page {
       leftContent >
       footerContent >
 
+      footerMenuContainer = TEXT
+      footerMenuContainer.value = {$plugin.tx_dinnerclubtheme.settings.footerMenuContainer}
       dinnerclubPhone = TEXT
       dinnerclubPhone.value = {$plugin.tx_dinnerclubtheme.settings.phone}
       dinnerclubStreet = TEXT

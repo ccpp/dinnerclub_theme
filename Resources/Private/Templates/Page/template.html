@@ -66,7 +66,9 @@ img.emoji {
 		<!-- wrapper -->
 		<div class="wrapper">
 
+				<f:if condition="{pageMedia}">
 				<header data-parallax="scroll" data-image-src="{f:uri.image(src: pageMedia, treatIdAsReference: 1)}">
+				</f:if>
 
 					<div class="logo-container">
 						<a href="/"> <img class="header-logo img-responsive" src="{f:uri.resource(extensionName: 'dinnerclub_theme', path: 'img/logo.svg')}"></a>
@@ -167,7 +169,9 @@ img.emoji {
           <div class="col-md-4 footer-links">
             <div>
               <h3 class="rounded">Weitere Links</h3>
-              <v:page.menu pageUid="66" id="menu-main_de-1" class="menu"/>
+              <f:if condition="{footerMenuContainer}}">
+              <v:page.menu pageUid="{footerMenuContainer}" id="menu-main_de-1" class="menu"/>
+              </f:if>
             </div>
             <f:comment><!--
             <div class="newsletter-box mrT-80">

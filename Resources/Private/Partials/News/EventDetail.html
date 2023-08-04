@@ -23,7 +23,9 @@
       <n:metaTag property="og:title" content="{newsItem.title}"/>
       <n:metaTag property="og:description" content="Dinnerclub-Abend am {newsItem.datetime -> f:format.date(format:'j. m Y')}"/>
       <div class="col-xs-3">
-      <f:image image="{media}" width="270" additionalAttributes="{itemprop: 'image'}"/>
+      <f:if condition="{media}">
+        <f:image image="{media}" width="270" additionalAttributes="{itemprop: 'image'}"/>
+      </f:if>
       </div>
     </f:for>
   </div>

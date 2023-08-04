@@ -1,4 +1,5 @@
-﻿absRefPrefix = /
+﻿# cat=plugin.tx_dinnerclubtheme/contact/0; type=string; label=absRefPrefix: prefix URI for this site
+absRefPrefix = /
 
 plugin.tx_dinnerclubtheme.settings {
 	# cat=plugin.tx_dinnerclubtheme/contact/a; type=string; label=Phone: Telephone contact
@@ -24,4 +25,7 @@ plugin.tx_dinnerclubtheme.settings {
 
 	# cat=plugin.tx_dinnerclubtheme/file/a; type=file; label=Default icon image: Used for OG, tiles, apple touch
 	thumbnail = typo3conf/ext/dinnerclub_theme/Resources/Public/img/logo-notext.png
+
+	# cat=plugin.tx_dinnerclubtheme/file/f; type=int+; label=Footer menu (parent page)
+	footerMenuContainer =
 }

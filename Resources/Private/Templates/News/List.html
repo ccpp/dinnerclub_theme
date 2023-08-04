@@ -6,9 +6,10 @@
 -->
 
 <f:section name="content">
-	<f:if condition="{news}">
-		<f:then>
-			<div class="news-list-view">
+                    {_all -> f:debug()}
+    <div class="news-list-view">
+        <f:if condition="{news}">
+            <f:then>
 				<f:if condition="{settings.hidePagination}">
 					<f:then>
 						<f:for each="{news}" as="newsItem" iteration="iterator">
@@ -20,16 +21,26 @@
 							<f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
 								<f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
 							</f:for>
-						</n:widget.paginate>
-					</f:else>
-				</f:if>
-			</div>
-		</f:then>
-		<f:else>
-			<div class="no-news-found">
-				<f:translate key="list_nonewsfound" />
-			</div>
-		</f:else>
-	</f:if>
+						</_n:widget.paginate>
+                    -->
+                        <f:if condition="{settings.list.paginate.insertAbove}">
+    <_f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
+</f:if>
+<f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+    <_f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+</f:for>
+<f:if condition="{settings.list.paginate.insertBelow}">
+    <_f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
+</f:if>
+                    </f:else>
+                </f:if>
+            </f:then>
+            <f:else>
+                <div class="no-news-found event-box shadow">
+                    <f:translate key="list_nonewsfound" />
+                </div>
+            </f:else>
+        </f:if>
+    </div>
 </f:section>
 
