@@ -171,7 +171,7 @@ page {
   }
   includeJS >
   includeJS {
-    jquery = EXT:dinnerclub_theme/Resources/Public/js/lib/jquery-1.12.4.min.js
+    jquery = EXT:dinnerclub_theme/Resources/Public/js/lib/jquery-3.7.1.min.js
     bootstrap = EXT:dinnerclub_theme/Resources/Public/js/lib/bootstrap-3.3.7.min.js
     conditionizr = EXT:dinnerclub_theme/Resources/Public/js/lib/conditionizr-4.3.0.min.js
     modernizr = EXT:dinnerclub_theme/Resources/Public/js/lib/modernizr-2.7.1.min.js
