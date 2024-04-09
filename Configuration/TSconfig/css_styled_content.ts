@@ -27,4 +27,14 @@ TCEFORM.tt_content {
             22 = Dunkler Hintergrund
         }
     }
+
+    # TYPO3 8
+    frame_class {
+        addItems {
+            #shadow = Schatten
+            #csc-default shadow = Box mit Schatten
+            #csc-frame-indent = Schmal
+            #indent-shadow = Schmal mit Schatten
+        }
+    }
 }
